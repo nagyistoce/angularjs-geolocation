@@ -26,18 +26,16 @@ Usage
 
 Example
 --
+For AngularJS v1.2.4 use the following as an example:
 ```
 angular.module('myApp',['geolocation'])
   .controller('mainCtrl', function ($scope,geolocation) {
-    $scope.coords = geolocation.getLocation().then(function(data){
-      return {lat:data.coords.latitude, long:data.coords.longitude};
+    geolocation.getLocation().then(function(data){
+      $scope.coords =  {lat:data.coords.latitude, long:data.coords.longitude};
     });
 });
 ```
 
-Demo
---
-See this [plunker](http://embed.plnkr.co/TM71LBh6ttYotOo6t7oX/preview) that displays your latitude/longitude
 
 Error Handling
 --
